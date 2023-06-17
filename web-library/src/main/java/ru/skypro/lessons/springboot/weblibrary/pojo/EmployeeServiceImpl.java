@@ -5,11 +5,7 @@ import ru.skypro.lessons.springboot.weblibrary.repository.EmployeeRepository;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static java.util.Comparator.comparingInt;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -76,6 +72,21 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .filter(i -> i.equals(getAllEmployees().get(id)))
                 .toList();
         return getIdEmployee;
+    }
+
+    @Override
+    public void deleteEmployeesWithId(Integer id) {
+        getAllEmployees().remove(id);
+    }
+
+    @Override
+    public void addEmployee(Employee employee) {
+        getAllEmployees().add(employee);
+    }
+
+    @Override
+    public void editEmployee(int id) {
+        getAllEmployees().get(id);
     }
 
 
