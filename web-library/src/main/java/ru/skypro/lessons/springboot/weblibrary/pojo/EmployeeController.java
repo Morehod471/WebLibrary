@@ -46,8 +46,23 @@ public class    EmployeeController {
         return employeeService.findEmployeeWithSalaryMoreAverage(salary);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/id")
     public List<Employee> findEmployeeByIdWithRequired(@PathVariable(required = false) Integer id) {
         return employeeService.findEmployeeByIdWithRequired(id);
+    }
+
+    @DeleteMapping("{id}")//?
+    public void deleteEmployeesWithId(@PathVariable(required = false) Integer id) {
+        employeeService.deleteEmployeesWithId(id);
+    }
+
+    @PostMapping("/") //?
+    public void addEmployee(@RequestBody Employee employee) {
+        employeeService.addEmployee(employee);
+    }
+
+    @PutMapping("{id}") //?
+    public void editEmployee(@RequestBody int id) {
+        employeeService.editEmployee(id);
     }
 }
