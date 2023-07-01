@@ -1,4 +1,4 @@
-package ru.skypro.lessons.springboot.weblibrary.Exceptions;
+package ru.skypro.lessons.springboot.weblibrary.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

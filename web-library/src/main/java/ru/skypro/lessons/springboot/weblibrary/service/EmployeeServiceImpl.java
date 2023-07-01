@@ -1,6 +1,7 @@
-package ru.skypro.lessons.springboot.weblibrary.pojo;
+package ru.skypro.lessons.springboot.weblibrary.service;
 
 import org.springframework.stereotype.Service;
+import ru.skypro.lessons.springboot.weblibrary.pojo.Employee;
 import ru.skypro.lessons.springboot.weblibrary.repository.EmployeeRepository;
 
 import java.util.Comparator;
@@ -56,14 +57,6 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .filter(i -> i.getSalary() >= avgSalary)
                 .toList();
         return salaryHigherAvgSalary;
-    }
-
-    @Override
-    public List<Employee> findEmployeeWithSalaryMoreAverage(Integer salary) {
-        List<Employee> salaryEmployeeHigherThenAvgSalary = getAllEmployees().stream()
-                .filter(i -> i.getSalary() >= salary)
-                .toList();
-        return salaryEmployeeHigherThenAvgSalary;
     }
 
     @Override

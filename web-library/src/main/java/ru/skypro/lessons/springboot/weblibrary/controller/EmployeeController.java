@@ -1,6 +1,8 @@
-package ru.skypro.lessons.springboot.weblibrary.pojo;
+package ru.skypro.lessons.springboot.weblibrary.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.skypro.lessons.springboot.weblibrary.pojo.Employee;
+import ru.skypro.lessons.springboot.weblibrary.service.EmployeeService;
 
 import java.util.List;
 
@@ -43,7 +45,7 @@ public class    EmployeeController {
 
     @GetMapping("/salaryHigherThan")
     public List<Employee> findEmployeeWithSalaryMoreAverage(@RequestParam("salary") Integer salary) {
-        return employeeService.findEmployeeWithSalaryMoreAverage(salary);
+        return employeeService.findSalaryHigh();
     }
 
     @GetMapping("/id")

@@ -1,10 +1,10 @@
-package ru.skypro.lessons.springboot.weblibrary.pojo;
+package ru.skypro.lessons.springboot.weblibrary.service;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import ru.skypro.lessons.springboot.weblibrary.pojo.Employee;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 public interface EmployeeService {
     List<Employee> getAllEmployees();
@@ -16,8 +16,6 @@ public interface EmployeeService {
     public List<Employee> findSalaryMax();
 
     public List<Employee> findSalaryHigh();
-
-    public List<Employee> findEmployeeWithSalaryMoreAverage(Integer salary);
 
     public List<Employee> findEmployeeByIdWithRequired(Integer id);
 
