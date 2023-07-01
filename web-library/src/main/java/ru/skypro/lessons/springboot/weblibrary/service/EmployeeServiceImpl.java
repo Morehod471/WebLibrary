@@ -58,29 +58,4 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .toList();
         return salaryHigherAvgSalary;
     }
-
-    @Override
-    public List<Employee> findEmployeeByIdWithRequired(Integer id) {
-        List<Employee> getIdEmployee = getAllEmployees().stream()
-                .filter(i -> i.equals(getAllEmployees().get(id)))
-                .toList();
-        return getIdEmployee;
-    }
-
-    @Override
-    public void deleteEmployeesWithId(Integer id) {
-        getAllEmployees().remove(id);
-    }
-
-    @Override
-    public void addEmployee(Employee employee) {
-        getAllEmployees().add(employee);
-    }
-
-    @Override
-    public void editEmployee(int id) {
-        getAllEmployees().get(id);
-    }
-
-
 }

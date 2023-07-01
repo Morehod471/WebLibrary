@@ -16,14 +16,4 @@ public interface EmployeeService {
     public List<Employee> findSalaryMax();
 
     public List<Employee> findSalaryHigh();
-
-    public List<Employee> findEmployeeByIdWithRequired(Integer id);
-
-    void deleteEmployeesWithId(Integer id);
-
-    void addEmployee(@RequestBody Employee employee);
-
-    void editEmployee(@RequestBody int id);
-
-
 }
