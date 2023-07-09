@@ -12,3 +12,46 @@ GET http://localhost:8080/employee/high-salary
 
 ### Получение всех сотрудников
 GET http://localhost:8080/employee
+
+### Создание сотрудников
+POST http://localhost:8080/employee
+Content-Type: application/json
+
+[
+     {
+       "name": "Maksim Vodkin",
+       "salary": 16000
+     },
+
+     {
+       "name": "Logan Hall",
+       "salary": 22000
+     }
+]
+
+### Обновление сотрудника
+POST http://localhost:8080/employee/7
+Content-Type: application/json
+
+{
+  "name": "Vasya Pupkin",
+  "salary": 13000
+}
+
+### Получение сотрудника
+POST http://localhost:8080/employee/1
+
+### Удаление сотрудника
+DELETE http://localhost:8080/employee/10
+
+### Получение сотрудников с ЗП выше, чем
+GET http://localhost:8080/employee/salaryHigherThan?salary=20000
+
+### Получение сотрудников с макс ЗП
+GET http://localhost:8080/employee/withHighestSalary
+
+### Получение сотрудников
+GET http://localhost:8080/employee
+
+### Получение полной информации о сотруднике
+GET http://localhost:8080/employee/fullInfo
