@@ -3,6 +3,7 @@ package ru.skypro.lessons.springboot.weblibrary.service;
 import org.springframework.stereotype.Service;
 import ru.skypro.lessons.springboot.weblibrary.pojo.Employee;
 import ru.skypro.lessons.springboot.weblibrary.repository.EmployeeRepository;
+import ru.skypro.lessons.springboot.weblibrary.repository.EmployeeRepositoryImpl;
 
 import java.util.Comparator;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
@@ -58,4 +59,39 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .toList();
         return salaryHigherAvgSalary;
     }
+
+    @Override
+    public List<Employee> getEmployeesWithSalaryHigherThan(Integer salary) {
+        List<Employee> salaryEmployeeBiggerThenSalary = getAllEmployees()
+                .stream()
+                .filter(i -> i.getSalary() >= salary)
+                .toList();
+        return salaryEmployeeBiggerThenSalary;
+    }
+
+    @Override
+    public List<Employee> getEmployeesByIdWithRequired(Integer id) {
+        List<Employee> getIdEmployee = getAllEmployees()
+                .stream()
+                .filter(i -> i.equals(getAllEmployees().get(id)))
+                .toList();
+        return getIdEmployee;
+    }
+
+    @Override
+    public void addEmployee(Employee employee) {
+        getAllEmployees().add(employee);
+    }
+
+    @Override
+    public void editEmployee(int id) {
+        getAllEmployees().get(id);
+    }
+
+    @Override
+    public void deleteEmployeesWithId(Integer id) {
+        getAllEmployees().remove(id);
+    }
+
+
 }

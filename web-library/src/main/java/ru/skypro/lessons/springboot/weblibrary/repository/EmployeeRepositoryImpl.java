@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import ru.skypro.lessons.springboot.weblibrary.pojo.Employee;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class EmployeeRepositoryImpl implements EmployeeRepository {
@@ -18,4 +19,5 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     public List<Employee> getAllEmployees() {
         return employeeList;
     }
+
 }
