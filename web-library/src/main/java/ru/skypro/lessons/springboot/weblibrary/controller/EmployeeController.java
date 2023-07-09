@@ -42,28 +42,4 @@ public class    EmployeeController {
         return employeeService.findSalaryHigh();
     }
 
-    @GetMapping("/salaryHigherThan")
-    public List<Employee> findEmployeeWithSalaryMoreAverage(@RequestParam Integer salary) {
-        return employeeService.getEmployeesWithSalaryHigherThan(salary);
-    }
-
-    @PostMapping
-    public void addEmployee(@RequestBody Employee employee) {
-        employeeService.addEmployee(employee);
-    }
-
-    @PutMapping("{id}")
-    public void editEmployee(@RequestBody int id) {
-        employeeService.editEmployee(id);
-    }
-
-    @GetMapping("{id}")
-    public List<Employee> getEmployeesByIdWithRequired(@PathVariable int id) {
-        return employeeService.getEmployeesByIdWithRequired(id);
-    }
-
-    @DeleteMapping("{id}")
-    public void deleteEmployeesWithId(@PathVariable int id) {
-        employeeService.deleteEmployeesWithId(id);
-    }
 }
